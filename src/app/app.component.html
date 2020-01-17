@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">What to watch</mat-toolbar>
+
+
+<div *ngFor="let post of posts">
+  <app-posts (click)="onClick(post)"[pictureUrl]="post.photoUrl"></app-posts>
+</div>
