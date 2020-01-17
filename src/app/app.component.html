@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">What to watch 
+<div style="margin-left: 1200px;">
+<button mat-button [matMenuTriggerFor]="menu">Oscar Nominees</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Marriage Story</button>
+  <button mat-menu-item>Joker</button>
+  <button mat-menu-item>The Irishman</button>
+  <button mat-menu-item>JoJo Rabbit</button>
+  <button mat-menu-item>Little Women </button>
+  <button mat-menu-item>Once Upon A Time In Hollywood </button>
+  <button mat-menu-item>Ford v Ferrari</button>
+  <button mat-menu-item>1917</button>
+  <button mat-menu-item>Parasite</button>
+</mat-menu> </div></mat-toolbar>
+
+<cdk-virtual-scroll-viewport [itemSize]="200" style="height: 700px">
+  <div style="padding: 30px; margin-left: 550px;">
+    <button mat-stroked-button color="primary" (click)="goBack()">Prev</button>
+    
+    <button mat-stroked-button color="primary" (click)="onLoadMore()">Next</button>
+       
+    </div>
+  <div *cdkVirtualFor="let post of posts">
+    <app-posts (click)="onClick(post)"[pictureUrl]="post.photoUrl"></app-posts>
+  </div>
+ 
+
+  </cdk-virtual-scroll-viewport>
