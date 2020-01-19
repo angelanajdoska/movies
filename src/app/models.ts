@@ -1,6 +1,9 @@
 class Post {
     id: number;
-    photoUrl: string;
+    name: string;
+    description: string;
+    photourl: string;
+    
 }
 
 class PostComment {

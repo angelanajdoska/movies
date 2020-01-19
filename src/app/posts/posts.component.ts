@@ -1,3 +1,4 @@
+  
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 @Input() pictureUrl: string; 
+name:string;
+description:string;
   constructor() { }
 
   ngOnInit() {

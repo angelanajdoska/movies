@@ -1,6 +1,21 @@
-<img mat-card-image [src]="data.clickedPost.photoUrl" alt="Photo" class="sizeImg2 float-left">
+
+        
+      
+<img mat-card-image [src]="data.clickedPost.photourl" alt="Photo" class="sizeImg2 float-left">
+<div style="margin-left: 400px;">
+<mat-card-title ><strong>{{data.clickedPost.name}}</strong></mat-card-title>
+<mat-card-content >{{data.clickedPost.description}}</mat-card-content>
+</div>
+<div style="margin-left: 400px;">Your rate:
+        <mat-slider
+        thumbLabel tickInterval="1"
+          [displayWith]="formatLabel"
+          min="1"
+          max="10"> </mat-slider>
+          <button mat-mini-fab color="basic"><span style="font-size:smaller">Save</span></button>
+          </div>
 <div class="scroll">
-              <div class="comment"  *ngFor="let postComment of postComments">
+                <div class="comment"  *ngFor="let postComment of postComments">
                 <mat-card-header>
                         <img mat-card-avatar [src]="postComment.photoUrl">
                         <mat-card-title>{{postComment.fullName}}</mat-card-title>
@@ -14,9 +29,7 @@
 <div class="comment">
 
 <mat-form-field>
-  <input matInput placeholder="What do you think about this movie?" [(ngModel)]="newComment.comment">
+  <input matInput placeholder="Leave your opinion" [(ngModel)]="newComment.comment">
 </mat-form-field>
 <button mat-raised-button (click)="onComment()">Comment</button>
-
 </div>
-

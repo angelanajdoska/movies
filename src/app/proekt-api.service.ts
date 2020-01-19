@@ -10,8 +10,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ProektApiService {
 
   constructor(private http: HttpClient) { }
-  getPosts():Observable<Post[]>{
-    return this.http.get<Post[]>("http://5e188217eaa1d2001436e4cf.mockapi.io/posts")
+  getPosts(pageNumber:number):Observable<Post[]>{
+    return this.http.get<Post[]>(`http://5e188217eaa1d2001436e4cf.mockapi.io/posts?page=${pageNumber}&limit=3`)
   }
 
   getPostComments(postId: number):Observable<PostComment[]>{
