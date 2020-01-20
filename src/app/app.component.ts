@@ -15,7 +15,7 @@ export class AppComponent {
 
   constructor(public dialog: MatDialog, private apiService: ProektApiService) {
     
-    this.apiService.getPosts().subscribe((receivedPosts)=>{
+    this.apiService.getPosts(this.pageNumber).subscribe((receivedPosts)=>{
       this.posts = receivedPosts;
     });
   }
